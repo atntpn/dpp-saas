@@ -17,7 +17,7 @@ export function Navbar() {
             <Link href="/dashboard">
               <Button variant="outline">Dashboard</Button>
             </Link>
-            <UserButton afterSignOutUrl="/" />
+            <UserButton signOutUrl="/" />
           </>
         ) : (
           <>
