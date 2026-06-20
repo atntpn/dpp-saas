@@ -1,6 +1,6 @@
 'use client'
 
-import { UserButton, useUser } from '@clerk/nextjs'
+import { UserButton, useUser, SignInButton, SignUpButton } from '@clerk/nextjs'
 import Link from 'next/link'
 import { Button } from './ui/button'
 
@@ -21,12 +21,12 @@ export function Navbar() {
           </>
         ) : (
           <>
-            <Link href="/sign-in">
+            <SignInButton mode="modal">
               <Button variant="outline">Se connecter</Button>
-            </Link>
-            <Link href="/sign-up">
+            </SignInButton>
+            <SignUpButton mode="modal">
               <Button className="bg-[#007AFF] text-white">S’inscrire</Button>
-            </Link>
+            </SignUpButton>
           </>
         )}
       </div>
