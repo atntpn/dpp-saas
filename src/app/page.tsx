@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#F5F5F7]">
+      <Navbar />
+      
       {/* Hero Section */}
       <section className="py-20 px-4 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-[#1D1D1F] mb-4">
