@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Plus, Search, BarChart3, Package, CreditCard, Settings } from "lucide-react";
 
-function getStatusClass(status) {
+function getStatusClass(status: string) {
   return status === "Conforme"
     ? "bg-green-100 text-green-800"
     : "bg-yellow-100 text-yellow-800";
@@ -102,12 +102,12 @@ export default function Dashboard() {
                         <TableCell className="font-mono text-[#86868B]">{product.gtin}</TableCell>
                         <TableCell className="text-[#86868B]">{product.date}</TableCell>
                         <TableCell>
-                          <span className="px-2 py-1 rounded-full text-xs font-medium " + statusClass>
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${statusClass}`}>
                             {product.status}
                           </span>
                         </TableCell>
                         <TableCell>
-                          <Link href={"/dashboard/products/" + product.id} className="text-[#007AFF] hover:underline">
+                          <Link href={`/dashboard/products/${product.id}`} className="text-[#007AFF] hover:underline">
                             Editer
                           </Link>
                         </TableCell>

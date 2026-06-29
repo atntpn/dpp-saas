@@ -15,7 +15,7 @@ export default function NewProductPage() {
   const [category, setCategory] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     console.log('Nouveau produit:', { name, gtin, category });
