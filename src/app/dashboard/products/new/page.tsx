@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart3, Package, CreditCard, Settings } from "lucide-react";
 import Link from "next/link";
@@ -61,7 +60,7 @@ export default function NewProductPage() {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Nom du produit</Label>
+                  <label htmlFor="name" className="text-sm font-medium text-[#1D1D1F]">Nom du produit</label>
                   <Input
                     id="name"
                     value={name}
@@ -71,7 +70,7 @@ export default function NewProductPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="gtin">GTIN</Label>
+                  <label htmlFor="gtin" className="text-sm font-medium text-[#1D1D1F]">GTIN</label>
                   <Input
                     id="gtin"
                     value={gtin}
@@ -81,7 +80,7 @@ export default function NewProductPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="category">Categorie</Label>
+                  <label htmlFor="category" className="text-sm font-medium text-[#1D1D1F]">Categorie</label>
                   <Input
                     id="category"
                     value={category}
