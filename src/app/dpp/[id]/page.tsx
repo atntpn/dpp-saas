@@ -1,12 +1,12 @@
-import { getDPPById } from "@/lib/supabase/helpers";
-import QRCodeDisplay from "@/components/QRCodeDisplay";
+import { getDPPById } from '@/lib/supabase/helpers';
+import QRCodeDisplay from '@/components/QRCodeDisplay';
 
 export default async function DPPPage({ params }: { params: { id: string } }) {
   const dpp = await getDPPById(params.id);
-  if (!dpp) return <div className="text-center py-12">DPP introuvable</div>;
+  if (!dpp) return <div className="p-6 text-center">DPP introuvable</div>;
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://dpp-saas-atntpns-projects.vercel.app";
-  const dppUrl = appUrl + "/dpp/" + dpp.id;
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://dpp-saas-atntpns-projects.vercel.app';
+  const dppUrl = appUrl + '/dpp/' + dpp.id;
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white min-h-screen">
@@ -27,7 +27,10 @@ export default async function DPPPage({ params }: { params: { id: string } }) {
       </div>
 
       <div className="mt-8 text-sm text-[#86868B] text-center">
-        <p>Ce DPP est genere conformement au reglement UE 2024/1781. Le fabricant est responsable de l exactitude des donnees.</p>
+        <p>
+          Ce DPP est genere conformement au reglement UE 2024/1781.
+        </p>
+        <p>Le fabricant est responsable de l exactitude des donnees.</p>
       </div>
     </div>
   );
