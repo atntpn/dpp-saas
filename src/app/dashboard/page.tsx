@@ -102,12 +102,12 @@ export default function Dashboard() {
                         <TableCell className="font-mono text-[#86868B]">{product.gtin}</TableCell>
                         <TableCell className="text-[#86868B]">{product.date}</TableCell>
                         <TableCell>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${statusClass}`}>
+                          <span className="px-2 py-1 rounded-full text-xs font-medium " + statusClass>
                             {product.status}
                           </span>
                         </TableCell>
                         <TableCell>
-                          <Link href={`/dashboard/products/${product.id}`} className="text-[#007AFF] hover:underline">
+                          <Link href={"/dashboard/products/" + product.id} className="text-[#007AFF] hover:underline">
                             Editer
                           </Link>
                         </TableCell>
@@ -123,3 +123,4 @@ export default function Dashboard() {
     </div>
   );
 }
+// Deploy trigger: 2026-06-29T18:32:41.427Z
