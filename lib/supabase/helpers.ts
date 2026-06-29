@@ -19,6 +19,7 @@ export async function createProductWithDPP(params: { userId: string; name: strin
       .select()
       .single();
     if (productError) throw productError;
+    
     const dppData = {
       "@context": "https://schema.org/",
       "@type": "Product",
@@ -35,6 +36,7 @@ export async function createProductWithDPP(params: { userId: string; name: strin
         compliance: { regulation: "EU 2024/1781", status: "Compliant" }
       }
     };
+    
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://dpp-saas-atntpns-projects.vercel.app";
     const dppUrl = appUrl + "/dpp/" + product.id;
     const { error: dppError } = await supabase
